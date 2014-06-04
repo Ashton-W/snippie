@@ -1,73 +1,276 @@
-# Snippets backup-import & Cheatsheet generator
-#### For Xcode.
-You can __browse snippets__ from my xcode-arsenal in the __readable_snippets__ directory above.
+# Snippets
 
-Below is the auto-generated cheat-sheet from your own exported snippets.
-It's created every time you back up your snippets and push to git.
-
-### Installation
-Fork the repository, to be able to export your own snippets and cheat-sheet. <br>
-You can save the repository wherever you want. <br>
-`$ git clone https://github.com/mneorr/snippie.git xcode-snippets` <br>
-`$ cd xcode-snippets` <br>
-`$ bundle install`
-
-### Standard usage
-``$ rake backup`` <br>
-This will clear my snippets, and put yours in the repository.
-
-It will also generate readable snippets in the __readable_snippets__ dir.
-And, it will re-create this file.
-
-After you do backup, `commit` and `push`, and you should have your fork up and ready.
-The cheat-sheet will be updated as well.
-
-### Import
-##### to your other computers, or a new OS installation
-The simplest thing you can do is:
-<br>
-`$ rake import`
-<br>
-It should not duplicate the same snippets.
-
-However, if you want to clear the existing snippets, and use the fresh ones, you may want to use <br>
-`$ rake clean_import`
-
-<br><br>
-
-## Cheat Sheet
 		
-* Delegate pragma mark - `delpragma`
-* Image View With Image Named - `imgimg`
-* Release object - `release`
-* Property Custom class - `pobj`
-* Property From dictionary - `pvfk`
-* View did dissapear - `vdd`
-* View Will Dissappear - `vwd`
-* Pragma Mark - `mark`
-* Private Pragma mark - `pmark`
-* Better Initializer - `init`
-* View Will Appear - `vwa`
-* NSLog - `log`
-* Factory method with Dictionary - `facdict`
-* @Synthesizer with _prefix - `psynth`
-* Private Category - `privcat`
-* Pragma - View Lifecycle - `pview`
-* View Did Load - `vdl`
-* View Did Unload - `vdu`
-*  - ``
-* View Did Appear - `vda`
-* NSString with format - `swf`
-* Property String - `pstr`
-* Init With Dictionary - `initdict`
-* Value For Key - `vfk`
-* Property NSNumber - `pnum`
-* UIViewController pragma marks - `conpragmas`
-* Singleton - `singleton`
-* Image named - `inamed`
-* Property IBOutlet custom class - `pibo`
-* UITableView delegate and datasource default methods - `delDat`
-* Property NSArray - `parr`
-* Method declaration - `method`
-* JSON operation - `jsonop`
-* Void method declaration - `void`
+### #pragma Mark - `mark`
+```Objective-C
+#pragma mark - <#Section#>
+
+```
+<br>
+
+### Animation Block - `animblock`
+```Objective-C
+ [UIView animateWithDuration:<#secs#> animations:^{
+        <#code#>
+    } completion:^(BOOL finished) {
+    }];
+```
+<br>
+
+### Class Continuation - `continuation`
+```Objective-C
+@interface <#Class Name#> ()
+<#Continuation#>
+@end
+
+```
+<br>
+
+### Constant String - `const`
+```Objective-C
+NSString * const k<#Constant#> = @"<#ConstantString#>";
+```
+<br>
+
+### Dispatch to Background - `dispatchBackground`
+```Objective-C
+dispatch_async(dispatch_get_global_queue(<#dispatch_queue_priority_t priority#>, <#unsigned long flags#>), ^(void) {
+    <#code#>
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        <#code#>
+    });
+});
+```
+<br>
+
+### Dispatch to Main Thread - `dispatchMain`
+```Objective-C
+dispatch_async(dispatch_get_main_queue(), ^(void) {
+    <#code#>
+});
+
+```
+<br>
+
+### Import - `pim`
+```Objective-C
+#import "<#header#>"
+
+```
+<br>
+
+### KVO Setter - `kvo`
+```Objective-C
+[self willChangeValueForKey:@"<#ivar#>"];
+[<#ivar#> autorelease];
+<#ivar#> = [<#newValue#> retain];
+[self didChangeValueForKey:@"<#ivar#>"];
+
+```
+<br>
+
+### NSFetchedResultsControllerDelegate - `frcd`
+```Objective-C
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type
+{
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)object
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[self.tableView cellForRowAtIndexPath:indexPath] forRowAtIndexPath:indexPath];
+            break;
+        case NSFetchedResultsChangeMove:
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView endUpdates];
+}
+
+```
+<br>
+
+### Section - `sect`
+```Objective-C
+/****************************************************************************/
+#pragma mark <#section#>
+
+```
+<br>
+
+### Shared Singleton - `shared`
+```Objective-C
++ (instancetype)shared<#name#>
+{
+    static <#class#> *_shared<#name#> = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _shared<#name#> = <#initializer#>;
+    });
+    
+    return _shared<#name#>;
+}
+
+```
+<br>
+
+### UITableViewDataSource - `tvds`
+```Objective-C
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return <#number#>;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return <#number#>;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:<#(UITableViewCellStyle)#> reuseIdentifier:CellIdentifier];
+    }
+        
+    return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    <#statements#>
+}
+
+```
+<br>
+
+### UITableViewDelegate - `tvdel`
+```Objective-C
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    <#statements#>
+}
+
+```
+<br>
+
+### UIViewController Lifecycle - `lifecycle`
+```Objective-C
+#pragma mark - UIViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+}
+
+```
+<br>
+
+### __strong self - `strongself`
+```Objective-C
+__strong __typeof(&*weakSelf)strongSelf = &<#weakSelf#&>;
+
+```
+<br>
+
+### __weak self - `weakself`
+```Objective-C
+__weak __typeof(&*self)weakSelf = self;
+
+```
+<br>
+
+### dispatch_async Pattern for Background Processing - `async`
+```Objective-C
+dispatch_async(dispatch_get_global_queue(<#dispatch_queue_priority_t priority#>, <#unsigned long flags#>), ^(void) {
+    <#code#>
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        <#code#>
+    });
+});
+
+```
+<br>
+
+### init - `init`
+```Objective-C
+self = [super init];
+if (!self) {
+  return nil;
+}
+
+<#initializations#>
+
+return self;
+
+```
+<br>
+
+
+		
