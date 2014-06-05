@@ -1,7 +1,8 @@
 //Animation Block
-//Use a block to animate values
+//Use a block to animate values [objc]
 //
 //Completion scopes: ["CodeBlock"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 

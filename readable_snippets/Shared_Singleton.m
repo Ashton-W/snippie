@@ -1,7 +1,8 @@
 //Shared Singleton
-//Class method that returns a singleton instance
+//Class method that returns a singleton instance [objc]
 //
 //Completion scopes: ["ClassImplementation"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 

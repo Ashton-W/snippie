@@ -1,7 +1,8 @@
 //dispatch_async Pattern for Background Processing
-//Dispatch to do work in the background, and then to the main queue with the results
+//Dispatch to do work in the background, and then to the main queue with the results [objc]
 //
 //Completion scopes: ["CodeBlock"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 

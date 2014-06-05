@@ -1,7 +1,8 @@
 //Dispatch to Main Thread
-//Dispatch a code block to the main thread
+//Dispatch a code block to the main thread [objc]
 //
 //Completion scopes: ["CodeExpression"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 

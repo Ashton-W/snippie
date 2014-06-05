@@ -1,7 +1,8 @@
 //#pragma Mark
-//Dividers and labels to organize your code into sections
+//Dividers and labels to organize your code into sections [objc]
 //
-//Completion scopes: ["ClassImplementation", "ClassInterfaceMethods", "TopLevel"]
+//Completion scopes: ["ClassInterfaceMethods", "TopLevel", "ClassImplementation"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 

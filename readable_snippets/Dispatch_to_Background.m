@@ -1,7 +1,8 @@
 //Dispatch to Background
-//Dispatch a code block to background (then on main)
+//Dispatch a code block to background (then on main) [objc]
 //
 //Completion scopes: ["CodeExpression"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 

@@ -1,7 +1,8 @@
 //UIViewController Lifecycle
-//Placeholders for all of the view controller lifecycle methods
+//Placeholders for all of the view controller lifecycle methods [objc]
 //
 //Completion scopes: ["ClassImplementation"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 

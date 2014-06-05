@@ -1,6 +1,42 @@
 # Snippets
 
 		
+### Swift
+
+		
+### UIViewController Lifecycle - `lifecycle`
+```Swift
+    // MARK: - UIViewController
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewDidUnload() {
+        super.viewDidUnload()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
+```
+<br>
+### Objective-C
+
+		
 ### #pragma Mark - `mark`
 ```Objective-C
 #pragma mark - <#Section#>

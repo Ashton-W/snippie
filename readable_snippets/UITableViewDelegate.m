@@ -1,7 +1,8 @@
 //UITableViewDelegate
-//Placeholders for the core table view delegate methods
+//Placeholders for the core table view delegate methods [objc]
 //
 //Completion scopes: ["ClassImplementation"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 

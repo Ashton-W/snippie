@@ -1,7 +1,8 @@
 //init
-//Designated incantation for your designated initializers
+//Designated incantation for your designated initializers [objc]
 //
 //Completion scopes: ["CodeBlock"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 

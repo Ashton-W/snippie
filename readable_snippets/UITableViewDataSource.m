@@ -1,7 +1,8 @@
 //UITableViewDataSource
-//Placeholders for the core table view data source methods
+//Placeholders for the core table view data source methods [objc]
 //
 //Completion scopes: ["ClassImplementation"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 

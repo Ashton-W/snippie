@@ -1,7 +1,8 @@
 //NSFetchedResultsControllerDelegate
-//Placeholders for the fetched results controller delegate methods
+//Placeholders for the fetched results controller delegate methods [objc]
 //
 //Completion scopes: ["ClassImplementation"]
+//Language: Objective-C
 //
 Copy / Paste in Xcode:
 
